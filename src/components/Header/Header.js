@@ -1,30 +1,42 @@
 import React, { useState } from 'react';
+import { Link } from 'react-scroll';
 import "boxicons";
 import './header.scss';
-function Header() {
+const Header = () => {
     const [Open, setOpen] = useState(false);
-
+    const [Header, setHeader] = useState(false);
+    //for toggle
     const handleClick = (e) => {
         e.preventDefault();
         setOpen(!Open);
     }
+    //for headerbackground
+    const handleHeaderbackground = () => {
+        if (window.scrollY >= 80) {
+            setHeader(true);
+        } else {
+            setHeader(false);
+        }
+    }
+    window.addEventListener('scroll', handleHeaderbackground);
+
     return (
-        <header className='header' id="header">
+        <header className={Header ? `header scroll-header` : `header`} id="header">
             <nav className='nav container'>
                 <a href='#' className='nav__logo'>Delivery</a>
-                <div className={Open ? `nav__menu show_menu` : `nav__menu`} id="nav-menu">
-                    <ul className='nav__list'>
+                <div className={Open ? `nav__menu show_menu` : `nav__menu`} >
+                    <ul className="nav__list">
                         <li className='nav__item'>
-                            <a href='#home' className='nav__link' onClick={handleClick}>Home</a>
+                            <Link to="home" spy={true} smooth={true} duration={50} className='nav__link' onClick={handleClick}>Home</Link>
                         </li>
                         <li className='nav__item'>
-                            <a href='#about' className='nav__link' onClick={handleClick}>About us</a>
+                            <Link to="about" spy={true} smooth={true} duration={50} className='nav__link' onClick={handleClick}>About us</Link>
                         </li>
                         <li className='nav__item'>
-                            <a href='#services' className='nav__link' onClick={handleClick}>Services</a>
+                            <Link to="services" spy={true} smooth={true} duration={50} className='nav__link' onClick={handleClick}>Services</Link>
                         </li>
                         <li className='nav__item'>
-                            <a href='#contact' className='nav__link' onClick={handleClick}>Contact us</a>
+                            <Link to="contact" spy={true} smooth={true} duration={50} className='nav__link' onClick={handleClick}>Contact us</Link>
                         </li>
                     </ul>
                 </div>

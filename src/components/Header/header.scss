@@ -7,6 +7,9 @@
   left: 0;
   z-index: var(--z-fixed);
   transition: 0.5s; //for animation darkmode
+  &.scroll-header {
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  }
 }
 /*======Nav=====*/
 .nav {
@@ -44,9 +47,24 @@
   &__toggle {
     color: var(--title-color);
     font-weight: var(--font-semi-bold);
+    cursor: pointer;
   }
   &__toggle {
     font-size: 1.3rem;
     cursor: pointer;
+  }
+}
+//react-scroll spy attribute traget this css calss by default if spy={true}
+.active {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -0.75rem;
+    left: 45%;
+    width: 5px;
+    height: 5px;
+    background-color: var(--title-color);
+    border-radius: 50%;
   }
 }

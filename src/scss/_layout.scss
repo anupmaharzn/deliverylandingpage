@@ -11,12 +11,15 @@
   }
 }
 .svg {
+  //with className
   &__color {
     fill: var(--first-color);
   }
+  //with class inside after 1st path wala property
   &__blob {
     fill: var(--first-color-light);
   }
+  //with className
   &__img {
     width: 300px;
     justify-self: center;

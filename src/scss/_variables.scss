@@ -7,6 +7,7 @@
   --header-height: 3rem;
 
   /*=== Colors ====*/
+  //you can change the color of project base on hue and sat given below
   --hue: 45; // yellow:45 /red:4 / orange:18 / green:11
   --sat: 98%; //yellow:98% / red:90% / orange:85% /green:50%
   --first-color: hsl(var(--hue), var(--sat), 60%);

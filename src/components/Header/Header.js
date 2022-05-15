@@ -38,6 +38,7 @@ const Header = () => {
                         <li className='nav__item'>
                             <Link to="contact" spy={true} smooth={true} duration={50} className='nav__link' onClick={handleClick}>Contact us</Link>
                         </li>
+
                     </ul>
                 </div>
                 <div className='nav__toggle' id="nav-toggle">
